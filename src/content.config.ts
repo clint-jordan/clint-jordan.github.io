@@ -43,9 +43,9 @@ const configuration = defineCollection({
       longDescription: z.string().optional(),
 
       /**
-       * The URL of the card image for social media sharing.
+       * The URL or path of the card image for social media sharing.
        */
-      cardImage: z.string().url().optional(),
+      cardImage: z.string().optional(),
 
       /**
        * Keywords for SEO, used in the `<meta name="keywords">` tag.
@@ -70,9 +70,9 @@ const configuration = defineCollection({
       longDescription: z.string().optional(),
 
       /**
-       * The URL of the card image for social media sharing.
+       * The URL or path of the card image for social media sharing.
        */
-      cardImage: z.string().url().optional(),
+      cardImage: z.string().optional(),
 
       /**
        * Keywords for SEO, used in the `<meta name="keywords">` tag.
@@ -100,9 +100,9 @@ const configuration = defineCollection({
       longDescription: z.string().optional(),
 
       /**
-       * The URL of the card image for social media sharing.
+       * The URL or path of the card image for social media sharing.
        */
-      cardImage: z.string().url().optional(),
+      cardImage: z.string().optional(),
 
       /**
        * Keywords for SEO, used in the `<meta name="keywords">` tag.
@@ -130,9 +130,9 @@ const configuration = defineCollection({
       longDescription: z.string().optional(),
 
       /**
-       * The URL of the card image for social media sharing.
+       * The URL or path of the card image for social media sharing.
        */
-      cardImage: z.string().url().optional(),
+      cardImage: z.string().optional(),
 
       /**
        * Keywords for SEO, used in the `<meta name="keywords">` tag.
@@ -155,9 +155,9 @@ const configuration = defineCollection({
       subtitle: z.string().default("Retro-Inspired Theme &<br>Built for Astro"),
 
       /**
-       * The URL of the hero image, used as a background image in the hero section.
+       * The URL or path of the hero image, used as a background image in the hero section.
        */
-      image: z.string().url().optional(),
+      image: z.string().optional(),
 
       /**
        * The text displayed in the call-to-action button in the hero section.
@@ -267,9 +267,9 @@ const blog = defineCollection({
       longDescription: z.string().optional(),
 
       /**
-       * The URL of the card image for social media sharing.
+       * The URL or path of the card image for social media sharing.
        */
-      cardImage: z.string().url().optional(),
+      cardImage: z.string().optional(),
 
       /**
        * The tags associated with the blog post, used for categorization and filtering.
@@ -334,9 +334,9 @@ const project = defineCollection({
     longDescription: z.string().optional(),
 
     /**
-     * The URL of the card image for social media sharing.
+     * The URL or path of the card image for social media sharing.
      */
-    cardImage: z.string().url().optional(),
+    cardImage: z.string().optional(),
 
     /**
      * The tags associated with the project, used for categorization and filtering.
