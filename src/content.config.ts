@@ -20,6 +20,9 @@ const configuration = defineCollection({
        * and is used to generate absolute URLs for links and metadata.
        */
       baseUrl: z.string().url(),
+
+      // The local development port
+      devPort: z.number().default(4321),
     }),
 
     /**
