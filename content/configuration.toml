@@ -2,50 +2,51 @@
 # we need to prefix all configuration keys with an underscore.
 
 [_.site]
-baseUrl = "http://zaggonaut.dev"
+devPort = 4321
+baseUrl = "https://clint-jordan.dev"
 
 [_.globalMeta]
-title = "Zaggonaut"
-description = "Retro-Inspired Theme & Built for Astro"
-longDescription = "Zaggonaut is a retro-inspired theme for Astro, built using TypeScript, TailwindCSS, and Astro."
+title = "clint-jordan"
+description = ""
+longDescription = ""
 cardImage = "/card-image.webp"
 keywords = ["web development", "design", "technology"]
 
 [_.blogMeta]
-title = "Zaggonaut Blog"
-description = "Practical wisdom, unfiltered thoughts, and hot takes."
-longDescription = "Web development, tech trends, and the occasional programming mishap."
+title = "clint-jordan"
+description = ""
+longDescription = ""
 cardImage = "/card-image.webp"
 keywords = ["web development", "design", "technology"]
 
 [_.projectMeta]
-title = "Zaggonaut Projects"
-description = "A list of my web development projects and developer tools."
-longDescription = "All of my projects, including both frontend and full-stack applications."
+title = "clint-jordan"
+description = ""
+longDescription = ""
 cardImage = "/card-image.webp"
 keywords = ["web development", "design", "technology"]
 
 [_.notFoundMeta]
-title = "Zaggonaut 404"
+title = "404"
 description = "The page you are looking for does not exist."
 longDescription = "The page you are looking for does not exist. Maybe it never existed. Spooky."
 cardImage = "/card-image.webp"
 
 [_.hero]
-title = "Zaggonaut"
-subtitle = "Retro-Inspired Theme &<br />Built for Astro"
+title = "Clint Jordan"
+subtitle = "A profound defining statement"
 image = "/card-image.webp"
 ctaText = "View Projects"
 ctaUrl = "/projects"
 
 [_.personal]
-name = "Zaggonaut"
-githubProfile = "https://github.com/RATIU5/zaggonaut"
+name = "clint-jordan"
+githubProfile = "https://github.com/clint-jordan"
 twitterProfile = "https://twitter.com"
 linkedinProfile = "https://linkedin.com/"
 
 [_.texts]
-articlesName = "Articles"
+articlesName = "Blog"
 projectsName = "Projects"
 viewAll = "View All"
 noArticles = "No articles found."

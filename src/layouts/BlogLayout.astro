@@ -1,5 +1,5 @@
 ---
-import { getConfigurationCollection, processArticleDate } from "../lib/utils";
+import { getConfigurationCollection, processArticleDate, getBaseUrl } from "../lib/utils";
 import type { ArticleFrontmatter } from "../lib/types";
 import Section from "../components/common/Section.astro";
 import Prose from "../components/Prose.astro";
@@ -10,6 +10,7 @@ type Props = { frontmatter: ArticleFrontmatter };
 const { frontmatter } = Astro.props;
 const articleDate = processArticleDate(frontmatter.timestamp);
 const { data: config } = await getConfigurationCollection();
+const baseUrl = await getBaseUrl();
 ---
 
 <Layout>
@@ -36,7 +37,7 @@ const { data: config } = await getConfigurationCollection();
     }
     <meta
       property="og:url"
-      content={`${config.site.baseUrl}/blog/${frontmatter.slug}`}
+      content={`${baseUrl}/blog/${frontmatter.slug}`}
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
@@ -53,7 +54,7 @@ const { data: config } = await getConfigurationCollection();
     <meta name="language" content="English" />
     <link
       rel="canonical"
-      href={`${config.site.baseUrl}/blog/${frontmatter.slug}`}
+      href={`${baseUrl}/blog/${frontmatter.slug}`}
     />
   </Fragment>
   <Section class="pt-8">

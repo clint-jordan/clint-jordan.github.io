@@ -42,3 +42,16 @@ export const getConfigurationCollection = async (): Promise<CollectionEntry<'con
   configCache = configs[0];
   return configs[0];
 }
+
+/**
+ * Gets the base URL for the site, prioritizing environment variables over content configuration.
+ * @returns the base URL string
+ */
+export const getBaseUrl = async (): Promise<string> => {
+  const { data: config } = await getConfigurationCollection();
+  
+  if (import.meta.env.DEV) {
+    return `http://localhost:${config.site.devPort}`;
+  }
+  return config.site.baseUrl;
+}

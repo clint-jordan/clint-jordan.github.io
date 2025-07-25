@@ -1,15 +1,17 @@
 ---
-import { getCollection } from "astro:content";
-import { getConfigurationCollection } from "../../lib/utils";
+import Layout from "../../layouts/Layout.astro";
 import Section from "../../components/common/Section.astro";
 import ProjectSnippet from "../../components/ProjectSnippet.astro";
-import Layout from "../../layouts/Layout.astro";
-
-const projects = (await getCollection("project")).sort(
-  (a, b) => b.data.timestamp.valueOf() - a.data.timestamp.valueOf(),
-);
+import { getCollection } from "astro:content";
+import { getConfigurationCollection, getBaseUrl } from "../../lib/utils";
 
 const { data: config } = await getConfigurationCollection();
+const baseUrl = await getBaseUrl();
+
+const projects = (await getCollection("project")).map((project) => ({
+  ...project.data,
+  url: `${baseUrl}/projects/${project.data.slug}`,
+}));
 ---
 
 <Layout>
@@ -30,7 +32,7 @@ const { data: config } = await getConfigurationCollection();
     {config.projectMeta.cardImage && (
       <meta property="og:image" content={config.projectMeta.cardImage} />
     )}
-    <meta property="og:url" content={`${config.site.baseUrl}/projects`} />
+    <meta property="og:url" content={`${baseUrl}/projects`} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={config.projectMeta.title} />
     <meta
@@ -42,27 +44,27 @@ const { data: config } = await getConfigurationCollection();
     )}
     <meta http-equiv="content-language" content="en" />
     <meta name="language" content="English" />
-    <link rel="canonical" href={`${config.site.baseUrl}/projects`} />
+    <link rel="canonical" href={`${baseUrl}/projects`} />
   </Fragment>
-  <Section class="py-4 my-8">
-    <div class="flex items-center gap-4 pt-8 pb-16">
-      <h1 class="font-display text-3xl sm:text-4xl leading-loose">{config.texts.projectsName}</h1>
-    </div>
-    <ul>
-      {
-        projects.map((project) => (
-          <li>
-            <ProjectSnippet
-              title={project.data.title}
-              description={project.data.description}
-              url={`${config.site.baseUrl}/projects/${project.data.slug}`}
-              githubUrl={project.data.githubUrl}
-              liveUrl={project.data.liveDemoUrl}
-              tags={project.data.tags ?? []}
-            />
-          </li>
-        ))
-      }
-    </ul>
+  <Section class="my-16">
+    <h1 class="text-3xl sm:text-4xl font-display pb-8">
+      {config.texts.projectsName}
+    </h1>
+    {projects.length > 0 ? (
+      <div class="space-y-8">
+        {projects.map((project) => (
+          <ProjectSnippet
+            title={project.title}
+            description={project.description}
+            url={project.url}
+            githubUrl={project.githubUrl}
+            liveUrl={project.liveDemoUrl}
+            tags={project.tags ?? []}
+          />
+        ))}
+      </div>
+    ) : (
+      <p>{config.texts.noProjects}</p>
+    )}
   </Section>
 </Layout>
