@@ -11,10 +11,21 @@ featured: true
 ---
 
 ## The Details
-foo
-## The Features
+Dark Matter is a simple astro theme for portfolios, blogs, resume, or just a
+nice place for your notes.
 
 
-## The Future
+## Demo
 
-Check out [the theme website](https://clint-jordan.github.io/dark-matter) to see it in action!
+Check out [the theme website](https://clint-jordan.github.io/dark-matter) to
+see it in action!
+
+
+## Credits
+
+- [John Memmott (RATIU5)](https://github.com/RATIU5)
+  - [Zaggonaut](https://github.com/RATIU5/zaggonaut)
+- [Chris Williams (chriswilliams)](https://github.com/chrismwilliams).
+  - [chriswilliams.dev](https://chriswilliams.dev)
+- [Kaushal Modi (kaushalmodi)](https://github.com/kaushalmodi).
+  - [scripter.co](https://scripter.co)
