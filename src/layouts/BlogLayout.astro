@@ -10,7 +10,7 @@ type Props = { frontmatter: ArticleFrontmatter };
 const { frontmatter } = Astro.props;
 const articleDate = processArticleDate(frontmatter.timestamp);
 const { data: config } = await getConfigurationCollection();
-const baseUrl = await getBaseUrl();
+const baseUrl = await getBaseUrl()
 ---
 
 <Layout>
