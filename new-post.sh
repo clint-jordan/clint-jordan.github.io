@@ -24,7 +24,7 @@ fi
 rootDir=$(dirname "$0") 
 
 getPrefix() {
-    latest=$(find $contentDir -type f -name "*.md" | xargs -I {} basename {} | sort -r | head -n 1 | cut -d "-" -f 1)
+    latest=$(find $contentDir -maxdepth 1 -type f -name "*.md" | xargs -I {} basename {} | sort -r | head -n 1 | cut -d "-" -f 1)
     # Remove leading zeros to force decimal interpretation
     latest=${latest##0}
     # Handle case where all digits were zeros
@@ -76,20 +76,6 @@ while (( $# )); do
   esac
 done
 
-#   title: z.string(),
-#   slug: z.string().optional(),
-#   description: z.string().optional(),
-#   longDescription: z.string().optional(),
-#   cardImage: z.string().optional(),
-#   tags: z.array(z.string()).optional(),
-#   feature: z.boolean().default(false),
-#   hide: z.boolean().default(false),
-#   draft: z.boolean().default(true),
-#   isIndex: z.boolean().default(false),
-#   indexDirectory: z.string().optional(),
-#   published: z.date().transform((val) => new Date(val)).optional(),
-#   updated: z.date().transform((val) => new Date(val)).optional(),
-
 frontmatter="---
 title: \"\"
 description: \"\"
@@ -100,6 +86,9 @@ tags: []
 published: $(getTimestamp)
 feature: false
 draft: true
+hide: false
+isIndex: false,
+indexDirectory: \"\" ,
 ---"
 
 if [ $contentType = blog ]; then
@@ -116,6 +105,16 @@ if [ $contentType = project ]; then
     echo "--- creating project $name ---"
     contentDir=$rootDir/content/projects
     frontmatter=$(echo "$frontmatter" | sed '/^tags:/a\repoUrl: ""' | sed '/^tags:/a\demoUrl: ""')
+fi
+
+if [ ! $(dirname $name) == '.' ]; then
+  contentDir=$(echo $contentDir/$(dirname $name) | sed 's|//|/|g')
+  name=$(basename $name)
+fi
+
+if [ ! -d $contentDir ]; then
+  echo "error: $contentDir does not exist"
+  exit 1
 fi
 
 prefix=$(getPrefix)
