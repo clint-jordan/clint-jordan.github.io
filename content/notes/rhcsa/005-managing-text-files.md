@@ -4,6 +4,7 @@ tags: [linux, rhcsa]
 published: 2025-10-31T14:46:54+00:00
 feature: false
 draft: true
+hide: true
 ---
 
 ## Viewing file contents

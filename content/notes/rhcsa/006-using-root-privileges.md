@@ -4,6 +4,7 @@ tags: [linux, rhcsa]
 published: 2025-11-01T06:08:37+00:00
 feature: false
 draft: true
+hide: true
 ---
 
 ## Becoming root

@@ -4,6 +4,7 @@ tags: [linux, rhcsa]
 published: 2025-11-09T18:15:56+00:00
 feature: false
 draft: true
+hide: true
 ---
 
 ## Using signals to manage process state

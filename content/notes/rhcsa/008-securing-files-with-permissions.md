@@ -4,6 +4,7 @@ tags: [linux, rhcsa]
 published: 2025-11-01T09:20:20+00:00
 feature: false
 draft: true
+hide: true
 ---
 
 ## Changing File Ownership

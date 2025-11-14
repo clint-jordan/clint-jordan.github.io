@@ -4,6 +4,7 @@ tags: [linux, rhcsa]
 published: 2025-11-11T09:29:32+00:00
 feature: false
 draft: true
+hide: true
 ---
 
 ## RHEL 10 logging options

@@ -4,6 +4,7 @@ tags: [linux, rhcsa]
 published: 2025-10-31T12:59:02+00:00
 feature: false
 draft: true
+hide: true
 ---
 
 ## Filesystem Hierarchy Standard
@@ -33,6 +34,11 @@ find / -type f -size +100M
 Find using multiple parameters
 ```bash
 find / -type f -size +100M
+```
+
+Find using or `-o`
+```bash
+find / -type f -name '*c' -o -name '*d'
 ```
 
 Embedding commands in find command

@@ -87,7 +87,7 @@ published: $(getTimestamp)
 feature: false
 draft: true
 hide: false
-isIndex: false,
+isIndex: false
 indexDirectory: \"\" ,
 ---"
 

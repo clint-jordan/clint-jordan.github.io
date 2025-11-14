@@ -4,6 +4,7 @@ tags: [linux, rhcsa]
 published: 2025-11-01T15:15:09+00:00
 feature: false
 draft: true
+hide: true
 ---
 
 ## IPv4 Networking

@@ -4,6 +4,7 @@ tags: [linux, rhcsa]
 published: 2025-11-10T10:29:49+00:00
 feature: false
 draft: true
+hide: true
 ---
 
 ## Scheduling options

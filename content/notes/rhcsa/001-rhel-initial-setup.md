@@ -6,6 +6,7 @@ published: 2025-10-29T14:12:42+00:00
 updated: 2025-11-01T06:58:40+00:00
 feature: false
 draft: false
+hide: true
 ---
 
 ## Disable screen saver

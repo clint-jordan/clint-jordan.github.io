@@ -4,6 +4,7 @@ tags: [linux, rhcsa]
 published: 2025-10-29T17:18:01+00:00
 feature: false
 draft: true
+hide: true
 ---
 
 ## Search man pages

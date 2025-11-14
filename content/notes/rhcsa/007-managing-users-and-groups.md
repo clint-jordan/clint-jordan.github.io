@@ -4,6 +4,7 @@ tags: [linux, rhcsa]
 published: 2025-11-01T07:30:25+00:00
 feature: false
 draft: true
+hide: true
 ---
 
 ## User Properties

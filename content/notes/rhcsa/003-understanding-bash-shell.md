@@ -4,6 +4,7 @@ tags: [linux, rhcsa]
 published: 2025-10-31T10:56:07+00:00
 feature: false
 draft: true
+hide: true
 ---
 
 ## Redirection and Piping 

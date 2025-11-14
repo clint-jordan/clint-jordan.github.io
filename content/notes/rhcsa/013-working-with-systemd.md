@@ -4,6 +4,7 @@ tags: [linux, rhcsa]
 published: 2025-11-10T05:41:07+00:00
 feature: false
 draft: true
+hide: true
 ---
 
 ## The role of systemd
